@@ -35,7 +35,6 @@ for pattern in list_of_patterns:
  #I clean the pattern from strange chars
  pattern=clean_text(str(pattern),dict)
  #I format the pattern to match what I am trying to catch. In this case the format text02 = 'nnnnnnnnn | |xx' withouth 0-leading
- #Here is possible to use also a REGEX.
  pattern=((pattern[:11]).lstrip('0')).replace("|"," | |")+((pattern[11:17]).lstrip('0'))
  print('START Analysis to find the following pattern -> '+pattern+': ')
  #for each file in the given path_to_file_to_check directory, the pattern will be checked to be find, in byte reading mode
@@ -45,6 +44,7 @@ for pattern in list_of_patterns:
    with open(path_to_file, 'rb') as f:
     #The chunck dimension can be changed as preferred
     for chunk in iter(lambda: f.read(4096), b''):
+    #Conversion of the str pattern in byte
      if str.encode(pattern) in chunk:
       i= i + 1
       print('Found '+pattern+' - Number of Occurencies -> '+str(i))
