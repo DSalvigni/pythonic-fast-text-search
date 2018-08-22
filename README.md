@@ -8,10 +8,10 @@
   - path_to_log_file -> It is your path to log file which will be create or overwritten once the script complete (ex. r"C:\\python_projects\\read-text\\filelog.txt")
 3 Launch the read_chunk.py from console
  
-Note:
+**Note:**
 In ../test there is the simple methods with lambda-function to check the pattern, created for test case.
 
-Source:
+**Source:**
 Thanks to: http://stupidpythonideas.blogspot.com/2014/07/three-ways-to-read-files.html
 
  
